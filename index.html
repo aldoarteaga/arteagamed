@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EARTS – Su médico de familia siempre en línea para usted</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__brand">EARTS</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#nosotros" data-i18n="nav_nosotros">Nosotros</a>
+        <a href="#soluciones" data-i18n="nav_soluciones">Soluciones</a>
+        <a href="#servicios" data-i18n="nav_servicios">Servicios</a>
+        <a href="#planes" data-i18n="nav_planes">Planes</a>
+        <a href="#contacto" class="btn btn--sm btn--outline" data-i18n="nav_contacto">Contacto</a>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn lang-btn--active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="nl">NL</button>
+          <button class="lang-btn" data-lang="no">NO</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="hero__tag" data-i18n="hero_tag">Atención médica personalizada</span>
+        <h1 class="hero__title" data-i18n-html="hero_title">Su médico de familia,<br><em>siempre en línea</em><br>para usted</h1>
+        <p class="hero__sub" data-i18n="hero_sub">Servicios asistenciales personalizados según necesidad</p>
+        <div class="hero__cta">
+          <a href="#planes" class="btn btn--primary" data-i18n="hero_cta_primary">Ver planes</a>
+          <a href="#servicios" class="btn btn--ghost" data-i18n="hero_cta_ghost">Nuestros servicios</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card hero__card--1">
+          <span class="icon-circle">📞</span>
+          <div>
+            <strong data-i18n="hero_card1_title">Asistencia 24/7</strong>
+            <small data-i18n="hero_card1_sub">Siempre disponibles</small>
+          </div>
+        </div>
+        <div class="hero__card hero__card--2">
+          <span class="icon-circle">🏠</span>
+          <div>
+            <strong data-i18n="hero_card2_title">Atención a domicilio</strong>
+            <small data-i18n="hero_card2_sub">Sin salir de casa</small>
+          </div>
+        </div>
+        <div class="hero__card hero__card--3">
+          <span class="icon-circle">👨‍⚕️</span>
+          <div>
+            <strong data-i18n="hero_card3_title">Equipo multidisciplinar</strong>
+            <small data-i18n="hero_card3_sub">Médicos, internistas, cardiólogos</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="about" id="nosotros">
+    <div class="container about__inner">
+      <div class="about__text">
+        <span class="section-tag" data-i18n="about_tag">Quiénes somos</span>
+        <h2 data-i18n="about_h2">Un equipo médico comprometido con su salud</h2>
+        <p data-i18n="about_p1">EARTS integra un equipo multidisciplinario de médicos, enfermeras y auxiliares de enfermería comprometidos con la excelencia en la atención de la salud.</p>
+        <p data-i18n="about_p2">Ofrecemos servicios médicos integrales, tanto preventivos como reactivos, diseñados para brindar atención de calidad y con tecnología de vanguardia.</p>
+        <div class="about__stats">
+          <div class="stat">
+            <strong data-i18n="stat1_val">24/7</strong>
+            <span data-i18n="stat1_label">Disponibilidad</span>
+          </div>
+          <div class="stat">
+            <strong data-i18n="stat2_val">100%</strong>
+            <span data-i18n="stat2_label">Atención personalizada</span>
+          </div>
+          <div class="stat">
+            <strong data-i18n="stat3_val">0</strong>
+            <span data-i18n="stat3_label">Desplazamientos necesarios</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__image">
+        <div class="about__image-placeholder">
+          <div class="pulse-ring"></div>
+          <div class="about__icon-grid">
+            <div class="about__icon-item">🩺</div>
+            <div class="about__icon-item">💊</div>
+            <div class="about__icon-item">❤️</div>
+            <div class="about__icon-item">🧬</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section class="solutions" id="soluciones">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag section-tag--light" data-i18n="solutions_tag">Nuestras soluciones</span>
+        <h2 data-i18n="solutions_h2">Lo que hacemos por usted</h2>
+        <p data-i18n="solutions_p">Tres pilares que garantizan una atención integral, coordinada y preventiva</p>
+      </div>
+      <div class="solutions__grid">
+
+        <div class="solution-card">
+          <div class="solution-card__num">01</div>
+          <div class="solution-card__icon">🏥</div>
+          <h3 data-i18n="sol1_h3">Atención médica profesional a domicilio</h3>
+          <p data-i18n="sol1_p">Llevamos un equipo de médicos, enfermeras y auxiliares altamente capacitados directamente al hogar del paciente, facilitando el acceso a consultas, tratamientos y seguimiento médico sin que la familia tenga que salir de casa.</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">02</div>
+          <div class="solution-card__icon">🔗</div>
+          <h3 data-i18n="sol2_h3">Coordinación integral del equipo de salud</h3>
+          <p data-i18n="sol2_p">Integramos y coordinamos a todos los profesionales involucrados en el cuidado del paciente, asegurando un flujo de información eficiente y una atención coherente, continua y sin errores.</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">03</div>
+          <div class="solution-card__icon">🛡️</div>
+          <h3 data-i18n="sol3_h3">Programas de prevención y educación en salud</h3>
+          <p data-i18n="sol3_p">Implementamos chequeos periódicos, campañas de educación y promoción de hábitos saludables, ayudando a las familias a anticiparse a posibles enfermedades y a mantener un estado de salud óptimo a largo plazo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="services_tag">Nuestros servicios</span>
+        <h2 data-i18n="services_h2">Lo que podemos hacer</h2>
+        <p data-i18n="services_p">Una cobertura completa para cada necesidad de salud de usted y su familia</p>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-item">
+          <div class="service-item__icon">📞</div>
+          <h4 data-i18n="svc1_h4">Asistencia Telefónica 24/7</h4>
+          <p data-i18n="svc1_p">Enfermeros disponibles por teléfono todo el día, en su idioma, para resolver dudas y emergencias.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">🏡</div>
+          <h4 data-i18n="svc2_h4">Consulta Médica Inicial y Mensual en Casa</h4>
+          <p data-i18n="svc2_p">Primera visita médica presencial para evaluar y planificar el cuidado personalizado. Seguimiento médico regular en el hogar para controlar la evolución y ajustar tratamientos.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">💻</div>
+          <h4 data-i18n="svc3_h4">Seguimiento y Urgencias de Enfermería Online 24/7</h4>
+          <p data-i18n="svc3_p">Nuestro equipo de enfermería está disponible en todo momento para realizar seguimiento y atender urgencias de forma rápida y segura, brindando apoyo inmediato sin necesidad de salir de casa.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">🏨</div>
+          <h4 data-i18n="svc4_h4">Seguimiento Hospitalario y Post Alta</h4>
+          <p data-i18n="svc4_p">Acompañamos al paciente durante su estancia hospitalaria y tras el alta, realizando valoraciones y controles en casa para asegurar una recuperación adecuada y prevenir complicaciones.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">💊</div>
+          <h4 data-i18n="svc5_h4">Gestión Integral de Botiquín y Medicación</h4>
+          <p data-i18n="svc5_p">Mantenimiento del botiquín siempre completo y actualizado, gestionando el suministro de medicamentos, revisando caducidades y asegurando el seguimiento de los tratamientos.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">📋</div>
+          <h4 data-i18n="svc6_h4">Visión Integral del Expediente Clínico</h4>
+          <p data-i18n="svc6_p">Nuestro equipo multidisciplinario revisa su expediente clínico para garantizar una atención coordinada, segura y adaptada a todas sus necesidades de salud.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">🔬</div>
+          <h4 data-i18n="svc7_h4">Acceso Prioritario a Pruebas Médicas</h4>
+          <p data-i18n="svc7_p">Gestionamos citas rápidas y preferentes para pruebas diagnósticas, evitando esperas y facilitando un diagnóstico ágil y seguro para su tranquilidad.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">⌚</div>
+          <h4 data-i18n="svc8_h4">Tecnología de Seguimiento Biométrico</h4>
+          <p data-i18n="svc8_p">Utilizamos pulseras biométricas que monitorizan en tiempo real sus signos vitales y actividad, permitiendo un seguimiento médico continuo, detección temprana de anomalías y respuestas rápidas ante cualquier cambio en su salud.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item__icon">📁</div>
+          <h4 data-i18n="svc9_h4">Gestión Administrativa Simplificada</h4>
+          <p data-i18n="svc9_p">Le ayudamos con todos los trámites administrativos relacionados con su atención médica, desde la gestión de citas y autorizaciones hasta el manejo de documentación, para que pueda centrarse en su bienestar sin preocupaciones.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="plans" id="planes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag section-tag--light" data-i18n="plans_tag">Programas</span>
+        <h2 data-i18n="plans_h2">Planes de asistencia médica</h2>
+        <p data-i18n="plans_p">Elija el programa que mejor se adapte a sus necesidades de salud</p>
+      </div>
+      <div class="plans__grid">
+
+        <!-- BÁSICA -->
+        <div class="plan-card">
+          <div class="plan-card__header">
+            <span class="plan-card__level" data-i18n="plan1_level">Asistencia Básica</span>
+            <div class="plan-card__price">
+              <span class="plan-card__first" data-i18n-html="plan1_first">100€<small>/primer mes</small></span>
+              <span class="plan-card__monthly" data-i18n-html="plan1_monthly">65€<small>/mes</small></span>
+            </div>
+          </div>
+          <div class="plan-card__team">
+            <strong data-i18n="plans_team">Equipo médico:</strong>
+            <div class="team-tags">
+              <span>Medicina General</span>
+              <span>Médico Internista</span>
+              <span>Enfermería</span>
+            </div>
+          </div>
+          <ul class="plan-card__list">
+            <li data-i18n="plan1_i1">Valoración y reconocimiento físico integral inicial en domicilio</li>
+            <li data-i18n="plan1_i2">Reconocimiento de tratamiento crónico</li>
+            <li data-i18n="plan1_i3">Valoración nutricional inicial</li>
+            <li data-i18n="plan1_i4">Generación de expediente clínico general para seguimiento de patologías</li>
+            <li data-i18n="plan1_i5">Asistencia telefónica de urgencia médica 24/7</li>
+            <li data-i18n="plan1_i6">Consulta médica telefónica (límite: 4 al mes)</li>
+            <li data-i18n="plan1_i7">Gestión y coordinación de consultas con especialistas, análisis y estudios radiológicos</li>
+          </ul>
+          <div class="plan-card__extras">
+            <strong data-i18n="plan_extras">Servicios adicionales:</strong>
+            <ul>
+              <li data-i18n="plan1_e1">Consulta médica presencial a precio preferencial (90€)</li>
+              <li data-i18n="plan1_e2">Prescripción y entrega de tratamiento crónico en domicilio (25€/mes)</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn--primary btn--full" data-i18n="plan_cta">Contratar plan</a>
+        </div>
+
+        <!-- INTEGRAL -->
+        <div class="plan-card plan-card--featured">
+          <div class="plan-card__badge" data-i18n="plan_badge">Más popular</div>
+          <div class="plan-card__header">
+            <span class="plan-card__level" data-i18n="plan2_level">Asistencia Integral</span>
+            <div class="plan-card__price">
+              <span class="plan-card__first" data-i18n-html="plan2_first">200€<small>/primer mes</small></span>
+              <span class="plan-card__monthly" data-i18n-html="plan2_monthly">160€<small>/mes</small></span>
+            </div>
+          </div>
+          <div class="plan-card__team">
+            <strong data-i18n="plans_team">Equipo médico:</strong>
+            <div class="team-tags">
+              <span>Medicina General</span>
+              <span>Médico Internista</span>
+              <span>Enfermería</span>
+            </div>
+          </div>
+          <ul class="plan-card__list">
+            <li data-i18n="plan2_i1">Valoración y reconocimiento físico integral inicial en domicilio</li>
+            <li data-i18n="plan2_i2">Reconocimiento de tratamiento crónico</li>
+            <li data-i18n="plan2_i3">Valoración nutricional inicial + recomendación dietética</li>
+            <li data-i18n="plan2_i4">Valoración, supervisión y personalización de tratamiento crónico (evitar polifarmacia)</li>
+            <li data-i18n="plan2_i5">Generación de expediente clínico para integración de datos extra e intra hospitalarios</li>
+            <li data-i18n="plan2_i6">Consulta médica telefónica (límite: 8 al mes)</li>
+            <li data-i18n="plan2_i7">Consulta telefónica con Enfermería 24/7 en inglés</li>
+            <li data-i18n="plan2_i8">Asistencia telefónica de urgencia médica 24/7</li>
+            <li data-i18n="plan2_i9">1 consulta médica presencial mensual</li>
+            <li data-i18n="plan2_i10">Gestión y coordinación de consultas con especialistas, análisis y estudios radiológicos</li>
+            <li data-i18n="plan2_i11">Prescripción y entrega de tratamiento crónico en domicilio</li>
+          </ul>
+          <div class="plan-card__extras">
+            <strong data-i18n="plan_extras">Servicios adicionales:</strong>
+            <ul>
+              <li data-i18n="plan2_e1">Consulta médica presencial extra a precio preferencial (80€)</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn--white btn--full" data-i18n="plan_cta">Contratar plan</a>
+        </div>
+
+        <!-- CONTINUADA -->
+        <div class="plan-card">
+          <div class="plan-card__header">
+            <span class="plan-card__level" data-i18n="plan3_level">Asistencia Continuada</span>
+            <div class="plan-card__price">
+              <span class="plan-card__first" data-i18n-html="plan3_first">400€<small>/primer mes</small></span>
+              <span class="plan-card__monthly" data-i18n-html="plan3_monthly">350€<small>/mes</small></span>
+            </div>
+          </div>
+          <div class="plan-card__team">
+            <strong data-i18n="plans_team">Equipo médico:</strong>
+            <div class="team-tags">
+              <span>Medicina General</span>
+              <span>Médico Internista</span>
+              <span>Cardiólogo</span>
+              <span>Enfermería</span>
+            </div>
+          </div>
+          <ul class="plan-card__list">
+            <li data-i18n="plan3_i1">Valoración y reconocimiento físico integral inicial en domicilio</li>
+            <li data-i18n="plan3_i2">Reconocimiento de tratamiento crónico</li>
+            <li data-i18n="plan3_i3">Valoración nutricional + diseño de dieta personalizada según patologías de base</li>
+            <li data-i18n="plan3_i4">Valoración, supervisión y personalización de tratamiento crónico (evitar polifarmacia)</li>
+            <li data-i18n="plan3_i5">Generación de expediente clínico para integración de datos extra e intra hospitalarios</li>
+            <li data-i18n="plan3_i6">Consulta médica telefónica diaria si lo requiere</li>
+            <li data-i18n="plan3_i7">Asistencia telefónica con Enfermería 24/7 en inglés</li>
+            <li data-i18n="plan3_i8">Asistencia telefónica de urgencia médica 24/7</li>
+            <li data-i18n="plan3_i9">2 consultas médicas presenciales mensuales (T.A., oximetría, glucosa, ECG)</li>
+            <li data-i18n="plan3_i10">Prescripción y entrega de tratamiento crónico en domicilio</li>
+            <li data-i18n="plan3_i11">Gestión y coordinación de consultas con especialistas, análisis y estudios radiológicos</li>
+          </ul>
+          <div class="plan-card__extras">
+            <strong data-i18n="plan_extras">Servicios adicionales:</strong>
+            <ul>
+              <li data-i18n="plan3_e1">Consulta médica presencial extra a precio preferencial (80€)</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn--primary btn--full" data-i18n="plan_cta">Contratar plan</a>
+        </div>
+
+        <!-- AVANZADA -->
+        <div class="plan-card">
+          <div class="plan-card__header">
+            <span class="plan-card__level" data-i18n="plan4_level">Asistencia Avanzada</span>
+            <div class="plan-card__price">
+              <span class="plan-card__first" data-i18n-html="plan4_first">800€<small>/primer mes</small></span>
+              <span class="plan-card__monthly" data-i18n-html="plan4_monthly">750€<small>/mes</small></span>
+            </div>
+          </div>
+          <div class="plan-card__team">
+            <strong data-i18n="plans_team">Equipo médico:</strong>
+            <div class="team-tags">
+              <span>Medicina General</span>
+              <span>Médico Internista</span>
+              <span>Cardiólogo</span>
+              <span>Geriatra</span>
+              <span>Enfermería</span>
+            </div>
+          </div>
+          <ul class="plan-card__list">
+            <li data-i18n="plan4_i1">Valoración y reconocimiento físico integral inicial en domicilio</li>
+            <li data-i18n="plan4_i2">Reconocimiento de tratamiento crónico</li>
+            <li data-i18n="plan4_i3">Valoración nutricional + diseño de dieta personalizada según patologías de base</li>
+            <li data-i18n="plan4_i4">Valoración, supervisión y personalización de tratamiento crónico (evitar polifarmacia)</li>
+            <li data-i18n="plan4_i5">Generación de expediente clínico para integración de datos extra e intra hospitalarios</li>
+            <li data-i18n="plan4_i6">Consulta médica telefónica diaria si lo requiere</li>
+            <li data-i18n="plan4_i7">Asistencia telefónica con Enfermería 24/7 en inglés</li>
+            <li data-i18n="plan4_i8">Asistencia telefónica de urgencia médica 24/7</li>
+            <li data-i18n="plan4_i9">Consulta médica presencial semanal (T.A., oximetría, glucosa, ECG)</li>
+            <li data-i18n="plan4_i10">Valoración cada 2 semanas en comité multidisciplinar (internista, cardiólogo y geriatra)</li>
+            <li data-i18n="plan4_i11">Prescripción y entrega de tratamiento crónico en domicilio</li>
+            <li data-i18n="plan4_i12">Gestión y coordinación de consultas con especialistas, análisis y estudios radiológicos</li>
+          </ul>
+          <div class="plan-card__extras">
+            <strong data-i18n="plan_extras">Servicios adicionales:</strong>
+            <ul>
+              <li data-i18n="plan4_e1">Consulta médica presencial extra a precio preferencial (80€)</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn--primary btn--full" data-i18n="plan_cta">Contratar plan</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container contact__inner">
+      <div class="contact__text">
+        <span class="section-tag section-tag--light" data-i18n="contact_tag">Contáctenos</span>
+        <h2 data-i18n="contact_h2">Estamos aquí para usted</h2>
+        <p data-i18n="contact_p">Nuestro equipo está listo para responder todas sus preguntas y ayudarle a elegir el plan más adecuado para sus necesidades.</p>
+        <div class="contact__info">
+          <div class="contact__info-item">
+            <span>📞</span>
+            <div>
+              <strong data-i18n="contact_phone_title">Asistencia telefónica</strong>
+              <small data-i18n="contact_phone_sub">Disponible 24 horas, 7 días a la semana</small>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span>📧</span>
+            <div>
+              <strong data-i18n="contact_email_title">Correo electrónico</strong>
+              <small data-i18n="contact_email_sub">Respuesta en menos de 24 horas</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <div class="form-group">
+          <label for="nombre" data-i18n="form_nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" data-i18n-placeholder="form_nombre_ph" placeholder="Su nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email" data-i18n="form_email_lbl">Correo electrónico</label>
+          <input type="email" id="email" name="email" data-i18n-placeholder="form_email_ph" placeholder="su@correo.com" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono" data-i18n="form_telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" data-i18n-placeholder="form_telefono_ph" placeholder="+34 600 000 000" />
+        </div>
+        <div class="form-group">
+          <label for="plan" data-i18n="form_plan">Plan de interés</label>
+          <select id="plan" name="plan">
+            <option value="" data-i18n="form_plan_default">Seleccionar plan...</option>
+            <option value="basica" data-i18n="form_plan_basica">Asistencia Básica (65€/mes)</option>
+            <option value="integral" data-i18n="form_plan_integral">Asistencia Integral (160€/mes)</option>
+            <option value="continuada" data-i18n="form_plan_continuada">Asistencia Continuada (350€/mes)</option>
+            <option value="avanzada" data-i18n="form_plan_avanzada">Asistencia Avanzada (750€/mes)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje" data-i18n="form_mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" data-i18n-placeholder="form_mensaje_ph" placeholder="Cuéntenos sobre sus necesidades de salud..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" data-i18n="form_submit">Enviar mensaje</button>
+        <p class="form__note" data-i18n="form_note">Al enviar este formulario acepta que nos pongamos en contacto con usted para brindarle información sobre nuestros servicios.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">EARTS</span>
+        <p data-i18n="footer_tagline">Su médico de familia siempre en línea para usted</p>
+        <p class="footer__tagline" data-i18n="footer_tagline2">Servicios asistenciales personalizados según necesidad</p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <strong data-i18n="footer_services">Servicios</strong>
+          <ul>
+            <li><a href="#servicios" data-i18n="footer_s1">Asistencia 24/7</a></li>
+            <li><a href="#servicios" data-i18n="footer_s2">Atención a domicilio</a></li>
+            <li><a href="#servicios" data-i18n="footer_s3">Seguimiento clínico</a></li>
+            <li><a href="#servicios" data-i18n="footer_s4">Gestión de medicación</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong data-i18n="footer_plans">Planes</strong>
+          <ul>
+            <li><a href="#planes" data-i18n="footer_p1">Asistencia Básica</a></li>
+            <li><a href="#planes" data-i18n="footer_p2">Asistencia Integral</a></li>
+            <li><a href="#planes" data-i18n="footer_p3">Asistencia Continuada</a></li>
+            <li><a href="#planes" data-i18n="footer_p4">Asistencia Avanzada</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong data-i18n="footer_company">Empresa</strong>
+          <ul>
+            <li><a href="#nosotros" data-i18n="footer_c1">Quiénes somos</a></li>
+            <li><a href="#soluciones" data-i18n="footer_c2">Nuestras soluciones</a></li>
+            <li><a href="#contacto" data-i18n="footer_c3">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p data-i18n="footer_copy">&copy; 2026 EARTS. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
