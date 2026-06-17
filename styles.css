@@ -235,6 +235,7 @@ input, select, textarea, button { font-family: inherit; font-size: inherit; }
   margin-bottom: 36px;
   font-weight: 400;
 }
+.hero__sub:empty { display: none; margin: 0; }
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero__visual {
   display: flex;
@@ -438,8 +439,6 @@ input, select, textarea, button { font-family: inherit; font-size: inherit; }
 }
 .plan-card--featured h3,
 .plan-card--featured strong { color: var(--white); }
-.plan-card--featured li { color: rgba(255,255,255,.85); }
-.plan-card--featured li::before { background: rgba(255,255,255,.6); }
 .plan-card__badge {
   position: absolute;
   top: -12px;
@@ -516,6 +515,8 @@ input, select, textarea, button { font-family: inherit; font-size: inherit; }
   border-top: 1px solid var(--gray-200);
   padding-top: 16px;
 }
+.plan-card--featured .plan-card__list li { color: rgba(255,255,255,.9); }
+.plan-card--featured .plan-card__list li::before { background: rgba(255,255,255,.7); }
 .plan-card--featured .plan-card__extras { border-color: rgba(255,255,255,.2); }
 .plan-card__extras strong { font-size: 0.78rem; color: var(--gray-600); display: block; margin-bottom: 8px; }
 .plan-card--featured .plan-card__extras strong { color: rgba(255,255,255,.7); }
