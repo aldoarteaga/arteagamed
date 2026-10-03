@@ -1,0 +1,65 @@
+.section {
+  background: var(--blue-800);
+}
+.grid {
+  display: grid;
+  gap: var(--s-xl);
+  align-items: center;
+}
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--s-2xl);
+  }
+}
+.text {
+  display: grid;
+  gap: var(--s-m);
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--sand-300);
+  color: var(--blue-900);
+}
+.body {
+  font-size: var(--text-lead);
+  color: #e3ecec;
+}
+.steps {
+  display: grid;
+  gap: var(--s-s);
+  margin-block: var(--s-2xs);
+}
+.steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-s);
+  align-items: center;
+  font-size: var(--text-lead);
+  font-weight: 600;
+}
+.steps span {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid var(--sand-300);
+  border-radius: 50%;
+  color: var(--sand-300);
+  font-weight: 700;
+}
+.note {
+  color: #c9dcda;
+}
+.photo {
+  --ratio: 4 / 3;
+}
+@media (min-width: 64rem) {
+  .photo {
+    --ratio: 4 / 5;
+  }
+}

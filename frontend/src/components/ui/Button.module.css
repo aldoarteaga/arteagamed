@@ -1,0 +1,71 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2xs);
+  min-height: 3.5rem;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: var(--r-pill);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.button:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.primary {
+  background: var(--blue-800);
+  color: var(--white);
+}
+.primary:hover {
+  background: var(--blue-900);
+  color: var(--white);
+}
+
+.secondary {
+  background: transparent;
+  border-color: var(--blue-800);
+  color: var(--blue-800);
+}
+.secondary:hover {
+  background: var(--blue-50);
+  color: var(--blue-900);
+}
+
+/* For dark (blue) bands */
+.light {
+  background: var(--sand-300);
+  color: var(--blue-900);
+}
+.light:hover {
+  background: var(--white);
+  color: var(--blue-900);
+}
+.outlineLight {
+  background: transparent;
+  border-color: var(--sand-300);
+  color: var(--white);
+}
+.outlineLight:hover {
+  background: rgb(255 255 255 / 0.1);
+  color: var(--white);
+}
+
+.compact {
+  min-height: 3rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.0625rem;
+}
+.block {
+  width: 100%;
+}

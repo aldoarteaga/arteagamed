@@ -1,0 +1,20 @@
+.note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-s);
+  align-items: start;
+  padding: var(--s-m);
+  background: var(--alert-50);
+  border-left: 6px solid var(--alert-700);
+  border-radius: var(--r-s);
+  color: var(--ink);
+}
+.icon {
+  color: var(--alert-700);
+  margin-top: 0.1rem;
+}
+.title {
+  color: var(--alert-700);
+  font-size: var(--text-h4);
+  margin-bottom: 0.25rem;
+}

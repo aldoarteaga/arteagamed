@@ -1,9 +1,20 @@
 name: Deploy Website
 
+# Deploys ONLY the legacy static landing page to the public S3 bucket.
+# The repo also holds the platform (frontend/, backend/, infra/, docs), which must
+# never be published, so files are copied from an explicit allowlist.
+
 on:
   push:
     branches:
       - main
+    paths:
+      - index.html
+      - error.html
+      - main.js
+      - styles.css
+      - translations.js
+      - .github/workflows/deploy.yml
 
 jobs:
   deploy:
@@ -13,6 +24,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Stage static site files
+        run: |
+          mkdir -p _site
+          cp index.html error.html main.js styles.css translations.js _site/
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -20,12 +36,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # --delete also removes anything outside the allowlist that earlier
+      # whole-repo syncs may have uploaded (e.g. README.md, .gitignore).
       - name: Sync files to S3
         run: |
-          aws s3 sync . s3://${{ secrets.S3_BUCKET }} \
-            --delete \
-            --exclude ".git/*" \
-            --exclude ".github/*"
+          aws s3 sync _site s3://${{ secrets.S3_BUCKET }} --delete
 
       - name: Invalidate CloudFront Cache
         run: |

@@ -1,0 +1,63 @@
+.steps {
+  display: grid;
+  gap: var(--s-l);
+  counter-reset: step;
+}
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-m);
+}
+.step h3 {
+  font-size: var(--text-h3);
+  margin-bottom: var(--s-2xs);
+}
+.step p {
+  color: var(--ink-muted);
+}
+.number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--blue-800);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+/* Connecting line: vertical on phones, horizontal on wide screens. */
+.step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 1.75rem;
+  top: 3.5rem;
+  bottom: calc(-1 * var(--s-l));
+  width: 2px;
+  background: var(--line-strong);
+}
+.cta {
+  margin-top: var(--s-xl);
+}
+
+@media (min-width: 52rem) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-l);
+  }
+  .step {
+    grid-template-columns: 1fr;
+    gap: var(--s-m);
+  }
+  .step:not(:last-child)::before {
+    left: 3.5rem;
+    right: calc(-1 * var(--s-l));
+    top: 1.75rem;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+}

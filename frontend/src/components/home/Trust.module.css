@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  gap: var(--s-m);
+}
+@media (min-width: 45rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 70rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.item {
+  display: grid;
+  gap: var(--s-2xs);
+  align-content: start;
+  padding: var(--s-l);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+}
+.item h3 {
+  font-size: var(--text-h4);
+}
+.item p {
+  color: var(--ink-muted);
+}
+.icon {
+  color: var(--teal-700);
+  margin-bottom: var(--s-2xs);
+}
+.placeholder {
+  padding: var(--s-xs);
+  border: 2px dashed var(--teal-700);
+  border-radius: var(--r-s);
+  font-size: 0.9375rem;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2xs) var(--s-l);
+  margin-top: var(--s-l);
+  font-weight: 600;
+}
+.links a {
+  display: inline-block;
+  padding-block: 0.5rem;
+}
+.testimonials {
+  margin-top: var(--s-2xl);
+}
+.testimonials ul {
+  display: grid;
+  gap: var(--s-m);
+  margin-top: var(--s-m);
+}
+.testimonials blockquote {
+  font-size: var(--text-lead);
+}
+.testimonials figcaption {
+  margin-top: var(--s-2xs);
+  color: var(--ink-muted);
+  font-weight: 600;
+}

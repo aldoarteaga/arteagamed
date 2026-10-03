@@ -1,0 +1,13 @@
+.heading {
+  display: grid;
+  gap: var(--s-s);
+  margin-bottom: var(--s-xl);
+  max-width: 46rem;
+}
+.intro {
+  font-size: var(--text-lead);
+  color: var(--ink-muted);
+}
+.onDark .intro {
+  color: #c9dcda;
+}

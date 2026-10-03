@@ -1,1 +1,44 @@
+# macOS
 .DS_Store
+
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+dist/
+.next/
+out/
+
+# environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.backup
+**/*.tfstate.lock.info
+**/terraform.tfvars
+!**/terraform.tfvars.example
+**/.terraform.lock.hcl
+
+# logs
+*.log
+logs/
+
+# test coverage
+coverage/
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# AWS CDK (not used, just in case)
+cdk.out/
+
+# TypeScript incremental build cache
+*.tsbuildinfo

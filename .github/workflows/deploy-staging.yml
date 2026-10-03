@@ -1,0 +1,133 @@
+name: Deploy – Staging
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: eu-west-1
+
+jobs:
+  build-and-push:
+    name: Build & Push images
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    outputs:
+      api_image: ${{ steps.meta-api.outputs.tags }}
+      web_image: ${{ steps.meta-web.outputs.tags }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: aws-actions/amazon-ecr-login@v2
+      - uses: docker/setup-buildx-action@v3
+
+      - name: API image metadata
+        id: meta-api
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.ECR_REGISTRY }}/eart-staging-api
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: Web image metadata
+        id: meta-web
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.ECR_REGISTRY }}/eart-staging-web
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: Build & push API
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: backend/Dockerfile
+          push: true
+          tags: ${{ steps.meta-api.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build & push Web
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: frontend/Dockerfile
+          push: true
+          tags: ${{ steps.meta-web.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  terraform-apply:
+    name: Terraform Apply (staging)
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "~1.9"
+      - run: terraform init
+        working-directory: infra/staging
+      - run: terraform apply -auto-approve
+        working-directory: infra/staging
+        env:
+          TF_VAR_account_id: ${{ secrets.AWS_ACCOUNT_ID }}
+          TF_VAR_acm_certificate_arn: ${{ secrets.STAGING_ACM_CERT_ARN }}
+          TF_VAR_api_image: ${{ needs.build-and-push.outputs.api_image }}
+          TF_VAR_web_image: ${{ needs.build-and-push.outputs.web_image }}
+
+  db-migrate:
+    name: Run DB migrations (staging)
+    runs-on: ubuntu-latest
+    needs: terraform-apply
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Run migrations via ECS task
+        run: |
+          aws ecs run-task \
+            --cluster eart-staging \
+            --task-definition eart-staging-api \
+            --launch-type FARGATE \
+            --network-configuration "awsvpcConfiguration={subnets=[${{ secrets.STAGING_PRIVATE_SUBNET_IDS }}],securityGroups=[${{ secrets.STAGING_ECS_SG_ID }}]}" \
+            --overrides '{"containerOverrides":[{"name":"api","command":["node","dist/db/migrate.js"]}]}'
+
+  deploy-ecs:
+    name: Deploy ECS services (staging)
+    runs-on: ubuntu-latest
+    needs: db-migrate
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - run: aws ecs update-service --cluster eart-staging --service eart-staging-api --force-new-deployment
+      - run: aws ecs update-service --cluster eart-staging --service eart-staging-web --force-new-deployment
+      - run: |
+          aws ecs wait services-stable --cluster eart-staging --services eart-staging-api eart-staging-web

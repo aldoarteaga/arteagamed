@@ -1,0 +1,102 @@
+.hero {
+  padding-block: var(--s-xl) var(--s-2xl);
+}
+.grid {
+  display: grid;
+  gap: var(--s-xl);
+  align-items: center;
+}
+.text {
+  display: grid;
+  gap: var(--s-m);
+  animation: rise 700ms var(--ease) both;
+}
+.text h1 {
+  max-width: 13ch;
+}
+.lead {
+  font-size: var(--text-lead);
+  color: var(--ink-muted);
+  max-width: 34ch;
+}
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-s);
+  margin-top: var(--s-2xs);
+}
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2xs) var(--s-m);
+  margin-top: var(--s-2xs);
+  color: var(--teal-700);
+  font-weight: 600;
+}
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.media {
+  position: relative;
+  animation: fade 900ms 150ms var(--ease) both;
+}
+.photo {
+  --ratio: 4 / 3;
+}
+.area {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2xs);
+  margin-top: var(--s-s);
+  font-weight: 600;
+  color: var(--blue-800);
+}
+.area svg {
+  flex-shrink: 0;
+  color: var(--teal-700);
+}
+
+@media (max-width: 29.99rem) {
+  .ctas > * {
+    width: 100%;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    padding-block: var(--s-2xl) var(--s-3xl);
+  }
+  .grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: var(--s-2xl);
+  }
+  .photo {
+    --ratio: 5 / 4;
+  }
+  /* The area note sits on the photo as a quiet caption card. */
+  .area {
+    position: absolute;
+    left: calc(-1 * var(--s-xl));
+    bottom: var(--s-xl);
+    max-width: 22rem;
+    margin: 0;
+    padding: var(--s-s) var(--s-m);
+    background: var(--white);
+    border-radius: var(--r-m);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
