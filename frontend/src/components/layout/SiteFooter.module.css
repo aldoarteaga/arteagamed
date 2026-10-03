@@ -1,18 +1,18 @@
 .footer {
-  background: var(--blue-900);
-  padding-block: var(--s-2xl) var(--s-l);
+  background: var(--color-primary-deep);
+  padding-block: var(--spacing-2xl) var(--spacing-l);
   /* room for the mobile quick-action bar */
-  padding-bottom: calc(var(--s-l) + 5.5rem);
-  color: #d6e2e3;
+  padding-bottom: calc(var(--spacing-l) + 5.5rem);
+  color: var(--color-on-primary-muted);
 }
 @media (min-width: 45rem) {
   .footer {
-    padding-bottom: var(--s-l);
+    padding-bottom: var(--spacing-l);
   }
 }
 .grid {
   display: grid;
-  gap: var(--s-xl) var(--s-l);
+  gap: var(--spacing-xl) var(--spacing-l);
   grid-template-columns: 1fr;
 }
 @media (min-width: 45rem) {
@@ -27,50 +27,50 @@
 }
 .brand {
   display: grid;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
   align-content: start;
 }
 .towns {
-  color: var(--sand-300);
+  color: var(--color-tertiary);
 }
 .heading {
-  margin-bottom: var(--s-s);
-  font-size: var(--text-h4);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--type-headline-sm-size);
 }
 .list {
   display: grid;
-  gap: 0.25rem;
+  gap: var(--spacing-3xs);
 }
 .list a {
   display: inline-block;
-  padding-block: 0.375rem;
-  color: #d6e2e3;
+  padding-block: var(--spacing-2xs);
+  color: var(--color-on-primary-muted);
   text-decoration: none;
 }
 .list a:hover {
-  color: var(--white);
+  color: var(--color-on-primary);
   text-decoration: underline;
 }
 .list .contactLink,
 .list li.contactLink {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-2xs);
-  padding-block: 0.375rem;
+  gap: var(--spacing-2xs);
+  padding-block: var(--spacing-2xs);
 }
 .bottom {
   display: grid;
-  gap: var(--s-s);
-  margin-top: var(--s-2xl);
-  padding-top: var(--s-l);
-  border-top: 1px solid rgb(255 255 255 / 0.18);
-  font-size: var(--text-sm);
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-l);
+  border-top: 1px solid color-mix(in srgb, var(--color-on-primary) 18%, transparent);
+  font-size: var(--type-body-sm-size);
 }
 .disclaimer {
   display: flex;
-  gap: var(--s-2xs);
+  gap: var(--spacing-2xs);
   align-items: flex-start;
-  color: var(--sand-300);
+  color: var(--color-tertiary);
   max-width: none;
 }
 .disclaimer svg {

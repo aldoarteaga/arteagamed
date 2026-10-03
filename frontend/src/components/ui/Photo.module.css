@@ -1,8 +1,8 @@
 .frame {
   position: relative;
   overflow: hidden;
-  border-radius: var(--r-l);
-  background: var(--sand-200);
+  border-radius: var(--rounded-lg);
+  background: var(--color-tertiary-container);
   aspect-ratio: var(--ratio, 4 / 5);
 }
 .image {
@@ -18,12 +18,12 @@
 }
 .brief {
   position: absolute;
-  inset: auto var(--s-s) var(--s-s);
-  padding: var(--s-xs) var(--s-s);
-  background: rgb(255 255 255 / 0.92);
-  border: 2px dashed var(--teal-700);
-  border-radius: var(--r-s);
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  color: var(--ink);
+  inset: auto var(--spacing-s) var(--spacing-s);
+  padding: var(--spacing-xs) var(--spacing-s);
+  background: var(--color-surface);
+  border: 2px dashed var(--color-secondary-text);
+  border-radius: var(--rounded-sm);
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line-height);
+  color: var(--color-on-surface);
 }

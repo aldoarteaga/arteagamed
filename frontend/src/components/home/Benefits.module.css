@@ -1,14 +1,14 @@
 .section {
-  padding-block: var(--s-2xl) var(--s-3xl);
-  border-top: 1px solid var(--line);
+  padding-block: var(--spacing-2xl) var(--spacing-section);
+  border-top: 1px solid var(--color-outline-variant);
 }
 .title {
-  margin-bottom: var(--s-xl);
+  margin-bottom: var(--spacing-xl);
   max-width: 20ch;
 }
 .grid {
   display: grid;
-  gap: var(--s-xl) var(--s-l);
+  gap: var(--spacing-xl) var(--spacing-l);
 }
 @media (min-width: 40rem) {
   .grid {
@@ -22,22 +22,22 @@
 }
 .item {
   display: grid;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-content: start;
 }
 .item h3 {
-  font-size: var(--text-h4);
+  font-size: var(--type-headline-sm-size);
 }
 .item p {
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }
 .icon {
   display: grid;
   place-items: center;
   width: 3.75rem;
   height: 3.75rem;
-  margin-bottom: var(--s-2xs);
-  border-radius: 50%;
-  background: var(--teal-100);
-  color: var(--teal-700);
+  margin-bottom: var(--spacing-2xs);
+  border-radius: var(--rounded-full);
+  background: var(--color-secondary-container);
+  color: var(--color-secondary-text);
 }

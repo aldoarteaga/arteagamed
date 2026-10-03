@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  gap: var(--s-l);
+  gap: var(--spacing-l);
 }
 @media (min-width: 64rem) {
   .grid {
@@ -8,22 +8,22 @@
   }
 }
 .column {
-  padding: var(--s-l);
-  border-radius: var(--r-m);
+  padding: var(--spacing-l);
+  border-radius: var(--rounded-md);
   border-top: 6px solid var(--tone);
-  background: var(--paper);
+  background: var(--color-neutral);
 }
 .column h3 {
-  font-size: var(--text-h4);
-  margin-bottom: var(--s-m);
+  font-size: var(--type-headline-sm-size);
+  margin-bottom: var(--spacing-m);
 }
 .column ul {
   display: grid;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
 }
 .column li {
   display: flex;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-items: flex-start;
 }
 .column svg {
@@ -32,12 +32,12 @@
   margin-top: 0.1rem;
 }
 .yes {
-  --tone: var(--teal-700);
+  --tone: var(--color-secondary-text);
 }
 .extra {
-  --tone: #6b5a3a;
+  --tone: var(--color-on-tertiary);
 }
 .not {
-  --tone: var(--alert-700);
-  background: var(--alert-50);
+  --tone: var(--color-error);
+  background: var(--color-error-container);
 }

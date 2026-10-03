@@ -1,25 +1,27 @@
 .section {
-  padding-block: var(--s-3xl);
-  background: var(--sand-300);
+  padding-block: var(--spacing-section);
+  background: var(--color-tertiary);
 }
 .inner {
   display: grid;
-  gap: var(--s-m);
+  gap: var(--spacing-m);
 }
 .inner h2 {
   max-width: 22ch;
-  font-size: clamp(2.125rem, 1.6rem + 2.2vw, 3.25rem);
-  color: var(--blue-900);
+  font-size: var(--type-headline-xl-size);
+  line-height: var(--type-headline-xl-line-height);
+  letter-spacing: var(--type-headline-xl-letter-spacing);
+  color: var(--color-primary-deep);
 }
 .body {
-  font-size: var(--text-lead);
-  color: var(--ink);
+  font-size: var(--type-body-lg-size);
+  color: var(--color-on-surface);
 }
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-s);
-  margin-top: var(--s-2xs);
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-2xs);
 }
 @media (max-width: 29.99rem) {
   .ctas > * {

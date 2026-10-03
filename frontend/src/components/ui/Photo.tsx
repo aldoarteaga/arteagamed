@@ -58,21 +58,21 @@ function CoastScene() {
       aria-hidden="true"
       focusable="false"
     >
-      <rect width="400" height="500" fill="#EFE4D1" />
-      <circle cx="292" cy="150" r="54" fill="#E8D8BD" />
+      <rect width="400" height="500" fill="var(--color-tertiary-container)" />
+      <circle cx="292" cy="150" r="54" fill="var(--color-tertiary)" />
       <path
         d="M0 300 L120 300 C150 300 168 236 196 182 C206 162 220 160 228 178 C246 220 262 286 300 300 L400 300 V500 H0 Z"
-        fill="#174A5B"
+        fill="var(--color-primary)"
       />
-      <rect y="300" width="400" height="200" fill="#4F8F8B" />
+      <rect y="300" width="400" height="200" fill="var(--color-secondary)" />
       <path
         d="M0 336 C60 328 110 344 170 336 S290 328 400 338 M0 380 C70 372 130 388 200 380 S320 372 400 382 M0 428 C60 420 140 436 210 428 S330 420 400 430"
-        stroke="#DCEBE9"
+        stroke="var(--color-secondary-container)"
         strokeWidth="3"
         fill="none"
         opacity="0.55"
       />
-      <path d="M0 460 C100 440 220 446 400 470 V500 H0 Z" fill="#E8D8BD" />
+      <path d="M0 460 C100 440 220 446 400 470 V500 H0 Z" fill="var(--color-tertiary)" />
     </svg>
   );
 }

@@ -9,6 +9,8 @@ on:
       - main
     paths:
       - frontend/**
+      - DESIGN.md
+      - scripts/design-tokens.mjs
       - package.json
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
@@ -40,6 +42,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Check DESIGN.md and generated tokens
+        run: |
+          pnpm design:lint
+          pnpm design:check
 
       - name: Typecheck and lint
         run: |

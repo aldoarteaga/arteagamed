@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  gap: var(--s-l);
+  gap: var(--spacing-l);
 }
 @media (min-width: 56rem) {
   .grid {
@@ -15,12 +15,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
   width: 100%;
-  padding: var(--s-l);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--r-m);
+  padding: var(--spacing-l);
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
   transition:
     box-shadow var(--dur) var(--ease),
     transform var(--dur) var(--ease);
@@ -29,76 +29,76 @@
   box-shadow: var(--shadow-card);
 }
 .recommended {
-  border: 3px solid var(--blue-800);
+  border: 3px solid var(--color-primary);
   box-shadow: var(--shadow-card);
 }
 
 .cardHeader {
   display: grid;
-  gap: var(--s-2xs);
+  gap: var(--spacing-2xs);
 }
 .badge {
-  margin-bottom: var(--s-2xs);
+  margin-bottom: var(--spacing-2xs);
 }
 .summary {
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }
 .price {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: var(--s-2xs);
-  margin-top: var(--s-2xs);
-  color: var(--blue-800);
+  gap: var(--spacing-2xs);
+  margin-top: var(--spacing-2xs);
+  color: var(--color-primary);
 }
 .amount {
-  font-size: clamp(2.5rem, 2.1rem + 1.4vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: var(--type-price-size);
+  font-weight: var(--type-price-weight);
+  line-height: var(--type-price-line-height);
+  letter-spacing: var(--type-price-letter-spacing);
 }
 .period {
-  font-size: var(--text-lead);
+  font-size: var(--type-body-lg-size);
   font-weight: 600;
 }
 .first {
-  margin-top: calc(-1 * var(--s-2xs));
-  color: var(--ink-muted);
+  margin-top: calc(-1 * var(--spacing-2xs));
+  color: var(--color-on-surface-variant);
   font-weight: 600;
 }
 
 .body {
   display: grid;
-  gap: var(--s-m);
-  margin-top: var(--s-xs);
-  padding-top: var(--s-m);
-  border-top: 1px solid var(--line);
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-m);
+  border-top: 1px solid var(--color-outline-variant);
 }
 .features {
   display: grid;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
 }
 .features li,
 .extras li {
   display: flex;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-items: flex-start;
 }
 .features svg {
   flex-shrink: 0;
-  color: var(--teal-700);
+  color: var(--color-secondary-text);
 }
 
 .details summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
   min-height: 3rem;
-  padding: var(--s-2xs) var(--s-s);
-  border: 2px solid var(--line);
-  border-radius: var(--r-s);
-  color: var(--blue-800);
+  padding: var(--spacing-2xs) var(--spacing-s);
+  border: 2px solid var(--color-outline-variant);
+  border-radius: var(--rounded-sm);
+  color: var(--color-primary);
   font-weight: 700;
   cursor: pointer;
   list-style: none;
@@ -107,10 +107,10 @@
   display: none;
 }
 .details summary:hover {
-  border-color: var(--blue-800);
+  border-color: var(--color-primary);
 }
 .details[open] summary {
-  margin-bottom: var(--s-s);
+  margin-bottom: var(--spacing-s);
 }
 .toggle {
   flex-shrink: 0;
@@ -122,36 +122,36 @@
 
 .extras {
   margin-top: auto;
-  padding: var(--s-s);
-  background: var(--sand-100);
-  border-radius: var(--r-s);
+  padding: var(--spacing-s);
+  background: var(--color-tertiary-subtle);
+  border-radius: var(--rounded-sm);
 }
 .extras h4 {
-  font-size: 1.125rem;
-  color: var(--ink);
-  margin-bottom: var(--s-2xs);
+  font-size: var(--type-label-lg-size);
+  color: var(--color-on-surface);
+  margin-bottom: var(--spacing-2xs);
 }
 .extras ul {
   display: grid;
-  gap: var(--s-2xs);
+  gap: var(--spacing-2xs);
   padding: 0;
   list-style: none;
 }
 .extras svg {
   flex-shrink: 0;
   margin-top: 0.15rem;
-  color: #6b5a3a;
+  color: var(--color-on-tertiary);
 }
 
 .note {
   display: flex;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-items: flex-start;
-  margin-top: var(--s-l);
+  margin-top: var(--spacing-l);
   max-width: none;
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }
 .note svg {
   flex-shrink: 0;
-  color: var(--teal-700);
+  color: var(--color-secondary-text);
 }

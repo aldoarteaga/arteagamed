@@ -57,11 +57,17 @@ export function ServiceArea({ t }: { t: Dictionary['area'] }) {
           >
             <title id="map-title">{t.mapTitle}</title>
             <desc id="map-desc">{t.mapDescription}</desc>
-            <rect x="0" y="0" width="760" height="800" fill="#DCEBE9" />
-            <path d={`${COAST} L-60,800 L-60,-60 L212,-60 Z`} fill="#F8F7F3" />
-            <path d={COAST} fill="none" stroke="#356764" strokeWidth="3" strokeLinejoin="round" />
+            <rect x="0" y="0" width="760" height="800" fill="var(--color-secondary-container)" />
+            <path d={`${COAST} L-60,800 L-60,-60 L212,-60 Z`} fill="var(--color-neutral)" />
+            <path
+              d={COAST}
+              fill="none"
+              stroke="var(--color-secondary-text)"
+              strokeWidth="3"
+              strokeLinejoin="round"
+            />
             {/* Peñón de Ifach: the small headland just east of Calpe */}
-            <path d="M443 511 L470 534" stroke="#356764" strokeWidth="2" />
+            <path d="M443 511 L470 534" stroke="var(--color-secondary-text)" strokeWidth="2" />
             <text x="474" y="548" className={styles.minorLabel}>
               {t.ifach}
             </text>
@@ -77,13 +83,13 @@ export function ServiceArea({ t }: { t: Dictionary['area'] }) {
             </g>
             {TOWNS.map((town) => (
               <g key={town.name}>
-                <circle cx={town.x} cy={town.y} r="18" fill="#174A5B" opacity="0.14" />
+                <circle cx={town.x} cy={town.y} r="18" fill="var(--color-primary)" opacity="0.14" />
                 <circle
                   cx={town.x}
                   cy={town.y}
                   r="9"
-                  fill="#174A5B"
-                  stroke="#FFFFFF"
+                  fill="var(--color-primary)"
+                  stroke="var(--color-on-primary)"
                   strokeWidth="3"
                 />
                 <text x={town.lx} y={town.ly} textAnchor={town.anchor} className={styles.townLabel}>

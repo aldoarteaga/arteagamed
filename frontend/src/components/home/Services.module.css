@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  column-gap: var(--s-2xl);
+  column-gap: var(--spacing-2xl);
 }
 @media (min-width: 52rem) {
   .grid {
@@ -10,33 +10,33 @@
 .item {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--s-m);
-  padding-block: var(--s-l);
-  border-top: 1px solid var(--line);
+  gap: var(--spacing-m);
+  padding-block: var(--spacing-l);
+  border-top: 1px solid var(--color-outline-variant);
 }
 .icon {
   display: grid;
   place-items: center;
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: var(--r-m);
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--teal-700);
+  border-radius: var(--rounded-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-secondary-text);
 }
 .text {
   display: grid;
-  gap: var(--s-2xs);
+  gap: var(--spacing-2xs);
 }
 .head {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--s-2xs) var(--s-s);
+  gap: var(--spacing-2xs) var(--spacing-s);
 }
 .head h3 {
-  font-size: var(--text-h4);
+  font-size: var(--type-headline-sm-size);
 }
 .text p {
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }

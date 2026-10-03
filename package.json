@@ -13,9 +13,13 @@
     "typecheck": "pnpm --filter @arteagamed/web typecheck",
     "lint": "eslint frontend/src",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "design:lint": "design.md lint DESIGN.md",
+    "design:tokens": "node scripts/design-tokens.mjs",
+    "design:check": "node scripts/design-tokens.mjs --check"
   },
   "devDependencies": {
+    "@google/design.md": "0.4.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "eslint": "^9.0.0",

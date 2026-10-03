@@ -30,8 +30,9 @@ frontend/
   src/content/              site facts (phone, towns), plans + prices, photos, testimonials
   src/i18n/                 dictionaries (es/en/nl/no/fi) and locale/URL helpers
   public/images/            photography (CC0 stock for now), public/og.png
-  DESIGN.md                 design system and the reasoning behind it
 scripts/deploy-s3.sh        uploads frontend/out to S3
+scripts/design-tokens.mjs   generates frontend/src/app/tokens.css from DESIGN.md
+DESIGN.md                   design system (DESIGN.md format, google-labs-code/design.md)
 ```
 
 ## Commands
@@ -82,11 +83,24 @@ Test a deploy safely with `scripts/deploy-s3.sh <bucket> --dryrun`.
 - Contact is by phone (`site.phone`). Email and WhatsApp are shown once `site.email` /
   `site.whatsapp` are set.
 
-## Accessibility (audience is 60+)
+## Design system (DESIGN.md)
 
-Body text 18–20px, WCAG AA contrast at minimum, 48px+ tap targets, visible focus, semantic
-HTML, native controls (`<select>`, `<details>`), `prefers-reduced-motion` respected. See
-`frontend/DESIGN.md` before changing styles.
+`DESIGN.md` at the repo root follows the [DESIGN.md format](https://github.com/google-labs-code/design.md):
+YAML tokens (colors, typography, spacing, rounded, components) plus the design rationale in
+prose. It is the source of truth for the look of the site.
+
+- Never hard-code colours, font sizes, spacing or radii in CSS. Use the generated custom
+  properties (`--color-*`, `--type-<level>-size|weight|line-height|letter-spacing`,
+  `--spacing-*`, `--rounded-*`). To change a value, edit `DESIGN.md`, then run
+  `pnpm design:tokens` and commit the regenerated `frontend/src/app/tokens.css`.
+- `pnpm design:lint` validates DESIGN.md (broken references, WCAG contrast of component
+  colour pairs, section order). Keep it at 0 errors and 0 warnings. The deploy workflow runs
+  it and fails if `tokens.css` is out of date.
+- Fluid sizes come from `-mobile` sibling tokens (e.g. `headline-lg` + `headline-lg-mobile`).
+- Quote unitless line heights (`lineHeight: "1.6"`); @google/design.md 0.4.0 drops bare numbers.
+- Audience is 60+: body text 18–20px, WCAG AA contrast at minimum, 48px+ tap targets, visible
+  focus, semantic HTML, native controls (`<select>`, `<details>`), `prefers-reduced-motion`
+  respected. Read DESIGN.md before changing styles.
 
 ## Conventions
 

@@ -11,4 +11,4 @@ pnpm build    # static export in frontend/out
 ```
 
 Pushing to `main` deploys automatically to S3 + CloudFront (`.github/workflows/deploy.yml`).
-See `CLAUDE.md` and `frontend/DESIGN.md` for details.
+See `CLAUDE.md` and `DESIGN.md` for details.

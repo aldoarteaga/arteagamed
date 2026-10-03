@@ -1,41 +1,43 @@
 .page {
-  padding-block: var(--s-2xl) var(--s-3xl);
+  padding-block: var(--spacing-2xl) var(--spacing-section);
 }
 .narrow {
-  max-width: calc(48rem + 2 * var(--gutter));
+  max-width: calc(48rem + 2 * var(--spacing-gutter));
 }
 .narrow h1 {
-  font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem);
+  font-size: var(--type-headline-xl-size);
+  line-height: var(--type-headline-xl-line-height);
+  letter-spacing: var(--type-headline-xl-letter-spacing);
 }
 .kicker {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-2xs);
-  margin-bottom: var(--s-s);
-  color: var(--teal-700);
+  gap: var(--spacing-2xs);
+  margin-bottom: var(--spacing-s);
+  color: var(--color-secondary-text);
   font-weight: 700;
 }
 .lead {
-  margin-top: var(--s-m);
-  font-size: var(--text-lead);
-  color: var(--ink-muted);
+  margin-top: var(--spacing-m);
+  font-size: var(--type-body-lg-size);
+  color: var(--color-on-surface-variant);
 }
 .block {
   display: grid;
-  gap: var(--s-m);
-  margin-top: var(--s-xl);
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-xl);
 }
 .steps,
 .checks {
   display: grid;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
 }
 .steps li {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--s-s);
+  gap: var(--spacing-s);
   align-items: center;
-  font-size: var(--text-lead);
+  font-size: var(--type-body-lg-size);
   font-weight: 600;
 }
 .steps span {
@@ -43,36 +45,36 @@
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: 50%;
-  background: var(--blue-800);
-  color: var(--white);
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
   font-weight: 700;
 }
 .checks li {
   display: flex;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-items: flex-start;
 }
 .checks svg {
   flex-shrink: 0;
-  color: var(--teal-700);
+  color: var(--color-secondary-text);
 }
 .draft {
   display: flex;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
   align-items: flex-start;
-  margin-top: var(--s-xl);
-  padding: var(--s-m);
-  background: var(--sand-100);
-  border-radius: var(--r-m);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-m);
+  background: var(--color-tertiary-subtle);
+  border-radius: var(--rounded-md);
 }
 .draft svg {
   flex-shrink: 0;
-  color: var(--teal-700);
+  color: var(--color-secondary-text);
 }
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-s);
-  margin-top: var(--s-xl);
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-xl);
 }

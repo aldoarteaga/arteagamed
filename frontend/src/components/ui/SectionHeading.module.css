@@ -1,13 +1,13 @@
 .heading {
   display: grid;
-  gap: var(--s-s);
-  margin-bottom: var(--s-xl);
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-xl);
   max-width: 46rem;
 }
 .intro {
-  font-size: var(--text-lead);
-  color: var(--ink-muted);
+  font-size: var(--type-body-lg-size);
+  color: var(--color-on-surface-variant);
 }
 .onDark .intro {
-  color: #c9dcda;
+  color: var(--color-on-primary-muted);
 }

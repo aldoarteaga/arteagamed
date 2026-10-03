@@ -1,38 +1,38 @@
 .grid {
   display: grid;
-  gap: var(--s-xl);
+  gap: var(--spacing-xl);
 }
 @media (min-width: 64rem) {
   .grid {
     grid-template-columns: 0.9fr 1.1fr;
-    gap: var(--s-2xl);
+    gap: var(--spacing-2xl);
     align-items: start;
   }
 }
 .info,
 .channels {
   display: grid;
-  gap: var(--s-m);
+  gap: var(--spacing-m);
   align-content: start;
 }
 .intro {
-  font-size: var(--text-lead);
-  color: var(--ink-muted);
+  font-size: var(--type-body-lg-size);
+  color: var(--color-on-surface-variant);
 }
 .channel {
   display: flex;
   align-items: center;
-  gap: var(--s-s);
-  padding: var(--s-m);
-  border: 2px solid var(--line);
-  border-radius: var(--r-m);
-  color: var(--ink);
+  gap: var(--spacing-s);
+  padding: var(--spacing-m);
+  border: 2px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  color: var(--color-on-surface);
   text-decoration: none;
   transition: border-color var(--dur) var(--ease);
 }
 .channel:hover {
-  border-color: var(--blue-800);
-  color: var(--ink);
+  border-color: var(--color-primary);
+  color: var(--color-on-surface);
 }
 .channelIcon {
   display: grid;
@@ -40,19 +40,19 @@
   flex-shrink: 0;
   width: 3.75rem;
   height: 3.75rem;
-  border-radius: 50%;
-  background: var(--blue-800);
-  color: var(--white);
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 .channelValue {
   display: block;
-  color: var(--blue-800);
-  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  color: var(--color-primary);
+  font-size: var(--type-headline-md-size);
   font-weight: 700;
   line-height: 1.2;
   word-break: break-word;
 }
 .channelNote {
   display: block;
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }

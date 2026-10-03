@@ -1,20 +1,20 @@
 .steps {
   display: grid;
-  gap: var(--s-l);
+  gap: var(--spacing-l);
   counter-reset: step;
 }
 .step {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--s-m);
+  gap: var(--spacing-m);
 }
 .step h3 {
-  font-size: var(--text-h3);
-  margin-bottom: var(--s-2xs);
+  font-size: var(--type-headline-md-size);
+  margin-bottom: var(--spacing-2xs);
 }
 .step p {
-  color: var(--ink-muted);
+  color: var(--color-on-surface-variant);
 }
 .number {
   position: relative;
@@ -23,10 +23,10 @@
   place-items: center;
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
-  background: var(--blue-800);
-  color: var(--white);
-  font-size: 1.5rem;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--type-headline-md-size);
   font-weight: 700;
 }
 /* Connecting line: vertical on phones, horizontal on wide screens. */
@@ -35,26 +35,26 @@
   position: absolute;
   left: 1.75rem;
   top: 3.5rem;
-  bottom: calc(-1 * var(--s-l));
+  bottom: calc(-1 * var(--spacing-l));
   width: 2px;
-  background: var(--line-strong);
+  background: var(--color-outline);
 }
 .cta {
-  margin-top: var(--s-xl);
+  margin-top: var(--spacing-xl);
 }
 
 @media (min-width: 52rem) {
   .steps {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-l);
+    gap: var(--spacing-l);
   }
   .step {
     grid-template-columns: 1fr;
-    gap: var(--s-m);
+    gap: var(--spacing-m);
   }
   .step:not(:last-child)::before {
     left: 3.5rem;
-    right: calc(-1 * var(--s-l));
+    right: calc(-1 * var(--spacing-l));
     top: 1.75rem;
     bottom: auto;
     width: auto;

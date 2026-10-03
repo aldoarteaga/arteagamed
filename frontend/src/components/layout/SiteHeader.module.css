@@ -1,32 +1,32 @@
 /* ── Utility strip ─────────────────────────────────────────── */
 .utility {
-  background: var(--blue-900);
-  color: var(--white);
-  font-size: var(--text-sm);
+  background: var(--color-primary-deep);
+  color: var(--color-on-primary);
+  font-size: var(--type-body-sm-size);
 }
 .utilityInner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--s-2xs) var(--s-l);
-  padding-block: 0.5rem;
+  gap: var(--spacing-2xs) var(--spacing-l);
+  padding-block: var(--spacing-2xs);
 }
 .utilityPhone,
 .utilityEmergency {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-2xs);
+  gap: var(--spacing-2xs);
 }
 .utilityPhone {
-  color: var(--white);
+  color: var(--color-on-primary);
   text-decoration: none;
-  --focus: var(--sand-300);
+  --focus: var(--color-tertiary);
 }
 .utilityPhone:hover {
-  color: var(--sand-300);
+  color: var(--color-tertiary);
 }
 .utilityEmergency {
-  color: var(--sand-300);
+  color: var(--color-tertiary);
 }
 @media (max-width: 44.99rem) {
   .utilityPhone {
@@ -40,34 +40,34 @@
   top: 0;
   z-index: 50;
   /* Opaque on purpose: backdrop-filter would trap the fixed mobile panel inside the header. */
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: var(--color-neutral);
+  border-bottom: 1px solid var(--color-outline-variant);
 }
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s-m);
+  gap: var(--spacing-m);
   min-height: var(--header-h);
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
-  color: var(--blue-800);
-  font-size: 1.375rem;
+  gap: var(--spacing-xs);
+  color: var(--color-primary);
+  font-size: var(--type-headline-sm-size);
   font-weight: 700;
   letter-spacing: -0.01em;
   text-decoration: none;
   flex-shrink: 0;
 }
 .logo:hover {
-  color: var(--blue-900);
+  color: var(--color-primary-deep);
 }
 .logoOnDark,
 .logoOnDark:hover {
-  color: var(--white);
+  color: var(--color-on-primary);
 }
 
 .desktopNav {
@@ -79,23 +79,23 @@
 }
 .links a {
   display: block;
-  padding: 0.625rem 0.5rem;
-  border-radius: var(--r-s);
-  color: var(--ink);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-2xs);
+  border-radius: var(--rounded-sm);
+  color: var(--color-on-surface);
+  font-size: var(--type-label-md-size);
+  font-weight: var(--type-label-md-weight);
   text-decoration: none;
   white-space: nowrap;
 }
 .links a:hover {
-  background: var(--sand-200);
-  color: var(--blue-900);
+  background: var(--color-tertiary-container);
+  color: var(--color-primary-deep);
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: var(--s-xs);
+  gap: var(--spacing-xs);
 }
 .desktopOnly {
   display: none;
@@ -108,24 +108,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.125rem;
-  min-width: 3.5rem;
-  min-height: 3.5rem;
-  padding: 0.25rem 0.5rem;
+  gap: var(--spacing-3xs);
+  min-width: var(--spacing-control);
+  min-height: var(--spacing-control);
+  padding: var(--spacing-3xs) var(--spacing-2xs);
   border: 0;
-  border-radius: var(--r-m);
+  border-radius: var(--rounded-md);
   background: transparent;
-  color: var(--blue-800);
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1;
+  color: var(--color-primary);
+  font-size: var(--type-label-sm-size);
+  font-weight: var(--type-label-sm-weight);
+  line-height: var(--type-label-sm-line-height);
   text-decoration: none;
   cursor: pointer;
 }
 .callButton:hover,
 .menuButton:hover {
-  background: var(--sand-200);
-  color: var(--blue-900);
+  background: var(--color-tertiary-container);
+  color: var(--color-primary-deep);
 }
 
 /* ── Mobile panel ──────────────────────────────────────────── */
@@ -135,26 +135,26 @@
   inset: var(--panel-top, var(--header-h)) 0 0 0;
   z-index: 49;
   overflow-y: auto;
-  padding: var(--s-m) var(--gutter) var(--s-2xl);
-  background: var(--paper);
-  border-top: 1px solid var(--line);
+  padding: var(--spacing-m) var(--spacing-gutter) var(--spacing-2xl);
+  background: var(--color-neutral);
+  border-top: 1px solid var(--color-outline-variant);
 }
 .panel[hidden] {
   display: none;
 }
 .panelLinks a {
   display: block;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--blue-800);
-  font-size: 1.375rem;
-  font-weight: 700;
+  padding: var(--spacing-s) 0;
+  border-bottom: 1px solid var(--color-outline-variant);
+  color: var(--color-primary);
+  font-size: var(--type-headline-sm-size);
+  font-weight: var(--type-headline-sm-weight);
   text-decoration: none;
 }
 .panelActions {
   display: grid;
-  gap: var(--s-s);
-  margin-top: var(--s-l);
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-l);
 }
 
 /* ── Language selector ─────────────────────────────────────── */
@@ -165,17 +165,18 @@
 }
 .language select {
   appearance: none;
-  min-height: 3rem;
-  padding: 0.5rem 2.25rem 0.5rem 2.5rem;
-  border: 2px solid var(--line-strong);
-  border-radius: var(--r-pill);
-  background: var(--white);
-  font-size: var(--text-sm);
+  min-height: var(--spacing-control-compact);
+  /* inline padding leaves room for the globe and chevron icons */
+  padding: var(--spacing-2xs) 2.25rem var(--spacing-2xs) 2.5rem;
+  border: 2px solid var(--color-outline);
+  border-radius: var(--rounded-full);
+  background: var(--color-surface);
+  font-size: var(--type-body-sm-size);
   font-weight: 600;
   cursor: pointer;
 }
 .language select:hover {
-  border-color: var(--blue-800);
+  border-color: var(--color-primary);
 }
 .actions .language select {
   width: 10rem;
@@ -183,7 +184,7 @@
 }
 .panelActions .language select {
   width: 100%;
-  min-height: 3.5rem;
+  min-height: var(--spacing-control);
 }
 .panelActions .language {
   display: flex;
@@ -192,7 +193,7 @@
 .languageChevron {
   position: absolute;
   pointer-events: none;
-  color: var(--blue-800);
+  color: var(--color-primary);
 }
 .languageIcon {
   left: 0.75rem;

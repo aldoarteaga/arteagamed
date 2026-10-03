@@ -5,9 +5,10 @@ import { SECTION, site } from '@/content/site';
 import { SiteHeader } from './SiteHeader';
 import { SiteFooter } from './SiteFooter';
 import { StickyBar } from './StickyBar';
+import '@/app/tokens.css';
 import '@/app/globals.css';
 
-// Designed by the Braille Institute for low-vision readers; see frontend/DESIGN.md.
+// Typography in /DESIGN.md: Atkinson Hyperlegible Next, designed for low-vision readers.
 const atkinson = Atkinson_Hyperlegible_Next({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '600', '700'],
@@ -17,7 +18,7 @@ const atkinson = Atkinson_Hyperlegible_Next({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#174A5B',
+  themeColor: '#174A5B', // colors.primary in DESIGN.md (meta tags cannot use CSS variables)
   width: 'device-width',
   initialScale: 1,
 };
