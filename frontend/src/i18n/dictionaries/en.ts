@@ -478,41 +478,13 @@ const en = {
 
   contact: {
     title: 'Talk to ArteagaMed',
-    intro: 'Questions about membership? Call us or send a message and we’ll get back to you.',
+    intro:
+      'To join or ask about membership, call us. We’ll answer your questions and arrange your first check-up.',
     phoneNote: 'Available 24 hours a day, 7 days a week',
     emailNote: 'We reply within 24 hours',
     emergencyTitle: 'In an emergency, call 112',
     emergencyBody:
       '112 is free, works from any phone in Spain, and operators can help in English. ArteagaMed is not an emergency service.',
-    form: {
-      title: 'Send us a message',
-      name: 'Your name',
-      email: 'Email address',
-      phone: 'Phone number',
-      optional: 'optional',
-      phoneHint: 'Include your country code, for example +44 or +31.',
-      plan: 'Membership you’re interested in',
-      planNone: 'Not sure yet',
-      message: 'Your message',
-      messageHint:
-        'Please don’t include detailed medical information here. We’ll talk about that by phone.',
-      consent:
-        'I agree that ArteagaMed may use these details to reply to my message, as described in our',
-      privacyLink: 'privacy policy',
-      submit: 'Send message',
-      sending: 'Sending…',
-      success: 'Thank you. Your message has been sent and we’ll reply within 24 hours.',
-      unavailable:
-        'Your message couldn’t be sent online right now. Please call us on {phone}, at any time of day.',
-      errorSummary: 'Please check the highlighted fields.',
-      errors: {
-        name: 'Enter your name.',
-        email: 'Enter an email address, for example name@example.com.',
-        phone: 'Enter a phone number with the country code, for example +44 7700 900123.',
-        message: 'Write a short message so we know how to help.',
-        consent: 'Tick the box so we can reply to you.',
-      },
-    },
   },
 
   finalCta: {

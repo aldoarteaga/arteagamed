@@ -1,20 +1,26 @@
 name: Deploy Website
 
-# Deploys ONLY the legacy static landing page to the public S3 bucket.
-# The repo also holds the platform (frontend/, backend/, infra/, docs), which must
-# never be published, so files are copied from an explicit allowlist.
+# Builds the website (Next.js static export in frontend/) and publishes it to
+# the S3 bucket behind CloudFront (arteagamed.com).
 
 on:
   push:
     branches:
       - main
     paths:
-      - index.html
-      - error.html
-      - main.js
-      - styles.css
-      - translations.js
+      - frontend/**
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - eslint.config.mjs
+      - tsconfig.base.json
+      - scripts/deploy-s3.sh
       - .github/workflows/deploy.yml
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-website
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -24,10 +30,27 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Stage static site files
+      # pnpm version comes from "packageManager" in package.json.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck and lint
         run: |
-          mkdir -p _site
-          cp index.html error.html main.js styles.css translations.js _site/
+          pnpm typecheck
+          pnpm lint
+
+      - name: Build static site
+        run: pnpm build
+        env:
+          SITE_URL: https://arteagamed.com
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -36,11 +59,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # --delete also removes anything outside the allowlist that earlier
-      # whole-repo syncs may have uploaded (e.g. README.md, .gitignore).
-      - name: Sync files to S3
-        run: |
-          aws s3 sync _site s3://${{ secrets.S3_BUCKET }} --delete
+      - name: Upload to S3
+        run: scripts/deploy-s3.sh "${{ secrets.S3_BUCKET }}"
 
       - name: Invalidate CloudFront Cache
         run: |

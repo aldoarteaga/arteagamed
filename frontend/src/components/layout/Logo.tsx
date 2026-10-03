@@ -2,10 +2,10 @@ import Link from 'next/link';
 import styles from './SiteHeader.module.css';
 
 /** Mark: the sun rising over the Mediterranean. Deliberately not a medical cross. */
-export function Logo({ label, onDark }: { label: string; onDark?: boolean }) {
+export function Logo({ href, label, onDark }: { href: string; label: string; onDark?: boolean }) {
   return (
     <Link
-      href="/"
+      href={href}
       className={`${styles.logo} ${onDark ? styles.logoOnDark : ''}`}
       aria-label={label}
     >

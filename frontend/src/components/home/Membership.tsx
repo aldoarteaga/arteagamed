@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import { PLAN_DETAILS, type PlanId } from '@eart/shared-types';
-import type { Dictionary } from '@/i18n';
+import { localePath, type Dictionary, type Locale } from '@/i18n';
+import { PLAN_DETAILS, PLAN_ORDER, RECOMMENDED_PLAN, type PlanId } from '@/content/plans';
 import { fill, formatEuros } from '@/i18n/format';
-import { PLAN_ORDER, RECOMMENDED_PLAN, SECTION } from '@/content/site';
+import { SECTION } from '@/content/site';
 import { Badge } from '@/components/ui/Badge';
 import { ButtonLink } from '@/components/ui/Button';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import styles from './Membership.module.css';
 
-type Props = { t: Dictionary['membership']; locale: string };
+type Props = { t: Dictionary['membership']; locale: Locale };
 
 export function Membership({ t, locale }: Props) {
   return (
@@ -30,7 +30,7 @@ export function Membership({ t, locale }: Props) {
         <p className={styles.note}>
           <Icon name="info" size={24} />
           <span>
-            {t.note} <Link href="/legal/membership-terms">{t.termsLink}</Link>
+            {t.note} <Link href={localePath(locale, '/legal/membership-terms')}>{t.termsLink}</Link>
           </span>
         </p>
       </div>
@@ -38,7 +38,7 @@ export function Membership({ t, locale }: Props) {
   );
 }
 
-function PlanCard({ id, t, locale }: { id: PlanId; t: Dictionary['membership']; locale: string }) {
+function PlanCard({ id, t, locale }: { id: PlanId; t: Dictionary['membership']; locale: Locale }) {
   const plan = t.plans[id];
   const price = PLAN_DETAILS[id];
   const recommended = id === RECOMMENDED_PLAN;
@@ -68,7 +68,7 @@ function PlanCard({ id, t, locale }: { id: PlanId; t: Dictionary['membership']; 
       </p>
 
       <ButtonLink
-        href={`/register?plan=${id}`}
+        href={`#${SECTION.contact}`}
         variant={recommended ? 'primary' : 'secondary'}
         block
         aria-describedby={titleId}

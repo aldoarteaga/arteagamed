@@ -471,41 +471,12 @@ const es = {
   contact: {
     title: 'Hable con ArteagaMed',
     intro:
-      '¿Tiene preguntas sobre la membresía? Llámenos o envíenos un mensaje y le responderemos.',
+      'Para hacerse miembro o resolver cualquier duda, llámenos. Le atenderemos y organizaremos su primera revisión.',
     phoneNote: 'Disponible las 24 horas, los 7 días de la semana',
     emailNote: 'Respondemos en menos de 24 horas',
     emergencyTitle: 'En una emergencia, llame al 112',
     emergencyBody:
       'El 112 es gratuito, funciona desde cualquier teléfono en España y sus operadores pueden atenderle en inglés. ArteagaMed no es un servicio de emergencias.',
-    form: {
-      title: 'Envíenos un mensaje',
-      name: 'Su nombre',
-      email: 'Correo electrónico',
-      phone: 'Teléfono',
-      optional: 'opcional',
-      phoneHint: 'Incluya el prefijo de su país, por ejemplo +34 o +44.',
-      plan: 'Membresía que le interesa',
-      planNone: 'Aún no lo sé',
-      message: 'Su mensaje',
-      messageHint:
-        'Por favor, no incluya información médica detallada. Hablaremos de ello por teléfono.',
-      consent:
-        'Acepto que ArteagaMed utilice estos datos para responder a mi mensaje, tal como se describe en nuestra',
-      privacyLink: 'política de privacidad',
-      submit: 'Enviar mensaje',
-      sending: 'Enviando…',
-      success: 'Gracias. Su mensaje se ha enviado y le responderemos en menos de 24 horas.',
-      unavailable:
-        'Ahora mismo no podemos enviar su mensaje por internet. Llámenos al {phone}, a cualquier hora.',
-      errorSummary: 'Revise los campos marcados.',
-      errors: {
-        name: 'Escriba su nombre.',
-        email: 'Escriba un correo electrónico, por ejemplo nombre@ejemplo.com.',
-        phone: 'Escriba un teléfono con prefijo de país, por ejemplo +34 600 000 000.',
-        message: 'Escriba un breve mensaje para saber cómo ayudarle.',
-        consent: 'Marque la casilla para que podamos responderle.',
-      },
-    },
   },
 
   finalCta: {

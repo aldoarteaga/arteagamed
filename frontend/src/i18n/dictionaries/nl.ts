@@ -471,41 +471,12 @@ const nl = {
   contact: {
     title: 'Neem contact op met ArteagaMed',
     intro:
-      'Vragen over het lidmaatschap? Bel ons of stuur een bericht, dan nemen we contact met u op.',
+      'Wilt u lid worden of hebt u vragen over het lidmaatschap? Bel ons. We beantwoorden uw vragen en plannen uw eerste controle.',
     phoneNote: '24 uur per dag, 7 dagen per week bereikbaar',
     emailNote: 'We antwoorden binnen 24 uur',
     emergencyTitle: 'Bel bij een noodgeval 112',
     emergencyBody:
       '112 is gratis, werkt vanaf elke telefoon in Spanje en de medewerkers kunnen u in het Engels helpen. ArteagaMed is geen alarmdienst.',
-    form: {
-      title: 'Stuur ons een bericht',
-      name: 'Uw naam',
-      email: 'E-mailadres',
-      phone: 'Telefoonnummer',
-      optional: 'optioneel',
-      phoneHint: 'Vermeld uw landnummer, bijvoorbeeld +31 of +32.',
-      plan: 'Lidmaatschap waarin u geïnteresseerd bent',
-      planNone: 'Weet ik nog niet',
-      message: 'Uw bericht',
-      messageHint:
-        'Vermeld hier geen uitgebreide medische informatie. Daarover praten we telefonisch.',
-      consent:
-        'Ik ga ermee akkoord dat ArteagaMed deze gegevens gebruikt om op mijn bericht te reageren, zoals beschreven in ons',
-      privacyLink: 'privacybeleid',
-      submit: 'Bericht versturen',
-      sending: 'Bezig met versturen…',
-      success: 'Dank u wel. Uw bericht is verstuurd en we reageren binnen 24 uur.',
-      unavailable:
-        'Uw bericht kan nu niet online worden verstuurd. Bel ons op {phone}, op elk moment van de dag.',
-      errorSummary: 'Controleer de gemarkeerde velden.',
-      errors: {
-        name: 'Vul uw naam in.',
-        email: 'Vul een e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.',
-        phone: 'Vul een telefoonnummer met landnummer in, bijvoorbeeld +31 6 12345678.',
-        message: 'Schrijf een kort bericht, zodat we weten hoe we kunnen helpen.',
-        consent: 'Vink het vakje aan zodat we u kunnen antwoorden.',
-      },
-    },
   },
 
   finalCta: {

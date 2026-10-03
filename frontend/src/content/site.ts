@@ -1,5 +1,3 @@
-import type { PlanId } from '@eart/shared-types';
-
 /**
  * Business facts shown on the public site. Keep these accurate: only list what
  * ArteagaMed actually offers, where it actually operates.
@@ -18,10 +16,6 @@ export const site = {
   /** Towns currently served. Do not add towns that aren't covered. */
   towns: ['Calpe', 'Moraira', 'Benissa', 'Teulada', 'Benidorm'],
 } as const;
-
-/** Display order of plans; prices live in PLAN_DETAILS (@eart/shared-types). */
-export const PLAN_ORDER: readonly PlanId[] = ['basic', 'integral', 'continuada', 'avanzada'];
-export const RECOMMENDED_PLAN: PlanId = 'integral';
 
 export const LEGAL_SLUGS = [
   'terms',

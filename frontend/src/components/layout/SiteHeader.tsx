@@ -1,5 +1,5 @@
 import type { Dictionary } from '@/i18n';
-import { ALL_LOCALES, AVAILABLE_LOCALES, LOCALE_NAMES, type SupportedLocale } from '@/i18n';
+import { LOCALES, LOCALE_NAMES, localePath, type Locale } from '@/i18n/locales';
 import { SECTION, site } from '@/content/site';
 import { Icon } from '@/components/ui/Icon';
 import { ButtonLink } from '@/components/ui/Button';
@@ -10,32 +10,26 @@ import styles from './SiteHeader.module.css';
 
 export type NavItem = { href: string; label: string };
 
-export function navItems(t: Dictionary['nav']): NavItem[] {
+export function navItems(t: Dictionary['nav'], locale: Locale): NavItem[] {
+  const home = localePath(locale);
+  const anchor = (id: string) => `${home}#${id}`;
   return [
-    { href: '/', label: t.home },
-    { href: `/#${SECTION.how}`, label: t.howItWorks },
-    { href: `/#${SECTION.services}`, label: t.services },
-    { href: `/#${SECTION.membership}`, label: t.membership },
-    { href: `/#${SECTION.teleassistance}`, label: t.teleassistance },
-    { href: `/#${SECTION.faq}`, label: t.faq },
-    { href: `/#${SECTION.contact}`, label: t.contact },
+    { href: home, label: t.home },
+    { href: anchor(SECTION.how), label: t.howItWorks },
+    { href: anchor(SECTION.services), label: t.services },
+    { href: anchor(SECTION.membership), label: t.membership },
+    { href: anchor(SECTION.teleassistance), label: t.teleassistance },
+    { href: anchor(SECTION.faq), label: t.faq },
+    { href: anchor(SECTION.contact), label: t.contact },
   ];
 }
 
-export function SiteHeader({ t, locale }: { t: Dictionary; locale: SupportedLocale }) {
-  const items = navItems(t.nav);
-  const languages = ALL_LOCALES.map((code) => ({
-    code,
-    name: LOCALE_NAMES[code],
-    available: AVAILABLE_LOCALES.includes(code),
-  }));
+export function SiteHeader({ t, locale }: { t: Dictionary; locale: Locale }) {
+  const items = navItems(t.nav, locale);
+  const membershipHref = `${localePath(locale)}#${SECTION.membership}`;
+  const languages = LOCALES.map((code) => ({ code, name: LOCALE_NAMES[code] }));
   const language = (
-    <LanguageSelector
-      current={locale}
-      languages={languages}
-      label={t.nav.language}
-      comingSoon={t.nav.comingSoon}
-    />
+    <LanguageSelector current={locale} languages={languages} label={t.nav.language} />
   );
 
   return (
@@ -56,7 +50,7 @@ export function SiteHeader({ t, locale }: { t: Dictionary; locale: SupportedLoca
       </div>
       <header className={styles.header}>
         <div className={`container ${styles.inner}`}>
-          <Logo label={`${site.name}, ${t.nav.home}`} />
+          <Logo href={localePath(locale)} label={`${site.name}, ${t.nav.home}`} />
 
           <nav aria-label={t.nav.mainLabel} className={styles.desktopNav}>
             <ul role="list" className={styles.links}>
@@ -71,7 +65,7 @@ export function SiteHeader({ t, locale }: { t: Dictionary; locale: SupportedLoca
           <div className={styles.actions}>
             <div className={styles.desktopOnly}>{language}</div>
             <div className={styles.desktopOnly}>
-              <ButtonLink href={`/#${SECTION.membership}`} compact>
+              <ButtonLink href={membershipHref} compact>
                 {t.nav.getMembership}
               </ButtonLink>
             </div>
@@ -88,7 +82,7 @@ export function SiteHeader({ t, locale }: { t: Dictionary; locale: SupportedLoca
               openLabel={t.nav.openMenu}
               closeLabel={t.nav.closeMenu}
               navLabel={t.nav.mainLabel}
-              cta={{ href: `/#${SECTION.membership}`, label: t.nav.getMembership }}
+              cta={{ href: membershipHref, label: t.nav.getMembership }}
               phone={{ href: site.phone.href, label: `${t.common.callUs}: ${site.phone.display}` }}
             >
               {language}

@@ -1,5 +1,5 @@
 {
-  "name": "eart",
+  "name": "arteagamed",
   "private": true,
   "version": "0.0.1",
   "packageManager": "pnpm@9.15.0",
@@ -8,16 +8,12 @@
     "pnpm": ">=9"
   },
   "scripts": {
-    "dev": "pnpm --parallel -r dev",
-    "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "dev": "pnpm --filter @arteagamed/web dev",
+    "build": "pnpm --filter @arteagamed/web build",
+    "typecheck": "pnpm --filter @arteagamed/web typecheck",
+    "lint": "eslint frontend/src",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "pnpm -r test",
-    "db:migrate": "pnpm --filter @eart/api db:migrate",
-    "db:migrate:down": "pnpm --filter @eart/api db:migrate:down"
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.0.0",

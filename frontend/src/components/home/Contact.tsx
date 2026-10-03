@@ -1,13 +1,11 @@
 import type { Dictionary } from '@/i18n';
-import { SECTION, PLAN_ORDER, site } from '@/content/site';
+import { SECTION, site } from '@/content/site';
 import { EmergencyNote } from '@/components/ui/EmergencyNote';
 import { Icon } from '@/components/ui/Icon';
-import { ContactForm } from './ContactForm';
 import styles from './Contact.module.css';
 
-type Props = { t: Dictionary['contact']; plans: Dictionary['membership']['plans'] };
-
-export function Contact({ t, plans }: Props) {
+/** Static site: no form. Visitors call (or email, once a public address is set). */
+export function Contact({ t }: { t: Dictionary['contact'] }) {
   return (
     <section
       id={SECTION.contact}
@@ -18,7 +16,9 @@ export function Contact({ t, plans }: Props) {
         <div className={styles.info}>
           <h2 id="contact-title">{t.title}</h2>
           <p className={styles.intro}>{t.intro}</p>
+        </div>
 
+        <div className={styles.channels}>
           <a href={site.phone.href} className={styles.channel}>
             <span className={styles.channelIcon}>
               <Icon name="phone" size={30} />
@@ -43,12 +43,6 @@ export function Contact({ t, plans }: Props) {
 
           <EmergencyNote title={t.emergencyTitle} body={t.emergencyBody} />
         </div>
-
-        <ContactForm
-          t={t.form}
-          phone={site.phone.display}
-          plans={PLAN_ORDER.map((id) => ({ id, name: plans[id].name }))}
-        />
       </div>
     </section>
   );

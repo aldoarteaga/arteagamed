@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import type { Route } from 'next';
 import type { MouseEventHandler, ReactNode } from 'react';
 import styles from './Button.module.css';
 
@@ -57,7 +56,7 @@ export function ButtonLink({
     );
   }
   return (
-    <Link href={href as Route} className={cls} {...rest}>
+    <Link href={href} className={cls} {...rest}>
       {children}
     </Link>
   );

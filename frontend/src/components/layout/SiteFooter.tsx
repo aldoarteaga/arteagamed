@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import type { Route } from 'next';
 import type { Dictionary } from '@/i18n';
+import { localePath, type Locale } from '@/i18n/locales';
 import { fill } from '@/i18n/format';
 import { LEGAL_SLUGS, site } from '@/content/site';
 import { Icon } from '@/components/ui/Icon';
@@ -8,12 +8,12 @@ import { Logo } from './Logo';
 import { navItems } from './SiteHeader';
 import styles from './SiteFooter.module.css';
 
-export function SiteFooter({ t }: { t: Dictionary }) {
+export function SiteFooter({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
     <footer className={`${styles.footer} on-dark`}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <Logo label={`${site.name}, ${t.nav.home}`} onDark />
+          <Logo href={localePath(locale)} label={`${site.name}, ${t.nav.home}`} onDark />
           <p>{t.footer.tagline}</p>
           <p className={styles.towns}>{site.towns.join(', ')}</p>
         </div>
@@ -23,7 +23,7 @@ export function SiteFooter({ t }: { t: Dictionary }) {
             {t.footer.explore}
           </h2>
           <ul role="list" className={styles.list}>
-            {navItems(t.nav)
+            {navItems(t.nav, locale)
               .slice(1)
               .map((item) => (
                 <li key={item.href}>
@@ -40,7 +40,7 @@ export function SiteFooter({ t }: { t: Dictionary }) {
           <ul role="list" className={styles.list}>
             {LEGAL_SLUGS.map((slug) => (
               <li key={slug}>
-                <Link href={`/legal/${slug}` as Route}>{t.legal.pages[slug].title}</Link>
+                <Link href={localePath(locale, `/legal/${slug}`)}>{t.legal.pages[slug].title}</Link>
               </li>
             ))}
           </ul>

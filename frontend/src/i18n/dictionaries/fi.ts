@@ -469,41 +469,13 @@ const fi = {
 
   contact: {
     title: 'Ota yhteyttä ArteagaMediin',
-    intro: 'Kysyttävää jäsenyydestä? Soita meille tai lähetä viesti, niin otamme sinuun yhteyttä.',
+    intro:
+      'Haluatko liittyä jäseneksi tai kysyä jäsenyydestä? Soita meille. Vastaamme kysymyksiisi ja sovimme ensimmäisen terveystarkastuksesi.',
     phoneNote: 'Palvelemme ympäri vuorokauden, joka päivä',
     emailNote: 'Vastaamme 24 tunnin kuluessa',
     emergencyTitle: 'Hätätilanteessa soita 112',
     emergencyBody:
       '112 on maksuton, toimii mistä tahansa puhelimesta Espanjassa, ja päivystäjät voivat auttaa englanniksi. ArteagaMed ei ole hätäpalvelu.',
-    form: {
-      title: 'Lähetä meille viesti',
-      name: 'Nimesi',
-      email: 'Sähköpostiosoite',
-      phone: 'Puhelinnumero',
-      optional: 'valinnainen',
-      phoneHint: 'Lisää maatunnus, esimerkiksi +358.',
-      plan: 'Jäsenyys, josta olet kiinnostunut',
-      planNone: 'En tiedä vielä',
-      message: 'Viestisi',
-      messageHint:
-        'Älä kirjoita tähän yksityiskohtaisia terveystietoja. Puhutaan niistä puhelimessa.',
-      consent:
-        'Hyväksyn, että ArteagaMed käyttää näitä tietoja vastatakseen viestiini, kuten kerrotaan',
-      privacyLink: 'tietosuojaselosteessa',
-      submit: 'Lähetä viesti',
-      sending: 'Lähetetään…',
-      success: 'Kiitos! Viestisi on lähetetty, ja vastaamme 24 tunnin kuluessa.',
-      unavailable:
-        'Viestiäsi ei juuri nyt voi lähettää verkossa. Soita meille numeroon {phone} mihin vuorokaudenaikaan tahansa.',
-      errorSummary: 'Tarkista merkityt kentät.',
-      errors: {
-        name: 'Kirjoita nimesi.',
-        email: 'Kirjoita sähköpostiosoite, esimerkiksi nimi@esimerkki.fi.',
-        phone: 'Kirjoita puhelinnumero maatunnuksen kanssa, esimerkiksi +358 40 123 4567.',
-        message: 'Kirjoita lyhyt viesti, jotta tiedämme, miten voimme auttaa.',
-        consent: 'Rastita ruutu, jotta voimme vastata sinulle.',
-      },
-    },
   },
 
   finalCta: {

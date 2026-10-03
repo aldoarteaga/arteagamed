@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Dictionary } from '@/i18n';
+import { localePath, type Dictionary, type Locale } from '@/i18n';
 import { config } from '@/config';
 import { testimonials } from '@/content/testimonials';
 import { Icon } from '@/components/ui/Icon';
@@ -8,7 +8,7 @@ import styles from './Trust.module.css';
 
 const showPlaceholders = config.NODE_ENV !== 'production';
 
-export function Trust({ t }: { t: Dictionary['trust'] }) {
+export function Trust({ t, locale }: { t: Dictionary['trust']; locale: Locale }) {
   // Items with no confirmed copy yet are hidden in production rather than invented.
   const items = t.items.filter((item) => item.body || showPlaceholders);
 
@@ -30,13 +30,15 @@ export function Trust({ t }: { t: Dictionary['trust'] }) {
         </ul>
         <ul role="list" className={styles.links}>
           <li>
-            <Link href="/legal/membership-terms">{t.links.membership}</Link>
+            <Link href={localePath(locale, '/legal/membership-terms')}>{t.links.membership}</Link>
           </li>
           <li>
-            <Link href="/legal/service-limitations">{t.links.limitations}</Link>
+            <Link href={localePath(locale, '/legal/service-limitations')}>
+              {t.links.limitations}
+            </Link>
           </li>
           <li>
-            <Link href="/legal/privacy">{t.links.privacy}</Link>
+            <Link href={localePath(locale, '/legal/privacy')}>{t.links.privacy}</Link>
           </li>
         </ul>
 

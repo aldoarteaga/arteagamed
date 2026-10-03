@@ -1,4 +1,4 @@
-import type { Dictionary } from '@/i18n';
+import { localePath, type Dictionary, type Locale } from '@/i18n';
 import { SECTION } from '@/content/site';
 import { ButtonLink } from '@/components/ui/Button';
 import { Icon } from '@/components/ui/Icon';
@@ -6,7 +6,7 @@ import { Photo } from '@/components/ui/Photo';
 import { photos } from '@/content/photos';
 import styles from './Teleassistance.module.css';
 
-export function Teleassistance({ t }: { t: Dictionary['teleassistance'] }) {
+export function Teleassistance({ t, locale }: { t: Dictionary['teleassistance']; locale: Locale }) {
   return (
     <section
       id={SECTION.teleassistance}
@@ -30,7 +30,7 @@ export function Teleassistance({ t }: { t: Dictionary['teleassistance'] }) {
           </ol>
           <p className={styles.note}>{t.note}</p>
           <div>
-            <ButtonLink href="/teleassistance" variant="light">
+            <ButtonLink href={localePath(locale, '/teleassistance')} variant="light">
               {t.cta}
             </ButtonLink>
           </div>

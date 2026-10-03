@@ -470,41 +470,13 @@ const no = {
 
   contact: {
     title: 'Snakk med ArteagaMed',
-    intro: 'Spørsmål om medlemskap? Ring oss eller send en melding, så tar vi kontakt.',
+    intro:
+      'Vil du bli medlem eller har du spørsmål om medlemskap? Ring oss. Vi svarer på spørsmålene dine og avtaler den første helsesjekken.',
     phoneNote: 'Tilgjengelig døgnet rundt, alle dager',
     emailNote: 'Vi svarer innen 24 timer',
     emergencyTitle: 'Ved nødsituasjoner, ring 112',
     emergencyBody:
       '112 er gratis, fungerer fra alle telefoner i Spania, og operatørene kan hjelpe deg på engelsk. ArteagaMed er ikke en nødetat.',
-    form: {
-      title: 'Send oss en melding',
-      name: 'Navnet ditt',
-      email: 'E-postadresse',
-      phone: 'Telefonnummer',
-      optional: 'valgfritt',
-      phoneHint: 'Ta med landskoden, for eksempel +47.',
-      plan: 'Medlemskap du er interessert i',
-      planNone: 'Vet ikke ennå',
-      message: 'Meldingen din',
-      messageHint:
-        'Ikke skriv detaljerte medisinske opplysninger her. Det snakker vi om på telefon.',
-      consent:
-        'Jeg godtar at ArteagaMed bruker disse opplysningene til å svare på meldingen min, som beskrevet i vår',
-      privacyLink: 'personvernerklæring',
-      submit: 'Send melding',
-      sending: 'Sender…',
-      success: 'Takk! Meldingen din er sendt, og vi svarer innen 24 timer.',
-      unavailable:
-        'Meldingen din kan ikke sendes på nett akkurat nå. Ring oss på {phone}, når som helst på døgnet.',
-      errorSummary: 'Kontroller de markerte feltene.',
-      errors: {
-        name: 'Skriv inn navnet ditt.',
-        email: 'Skriv inn en e-postadresse, for eksempel navn@eksempel.no.',
-        phone: 'Skriv inn et telefonnummer med landskode, for eksempel +47 912 34 567.',
-        message: 'Skriv en kort melding, så vi vet hvordan vi kan hjelpe.',
-        consent: 'Kryss av i boksen, så vi kan svare deg.',
-      },
-    },
   },
 
   finalCta: {

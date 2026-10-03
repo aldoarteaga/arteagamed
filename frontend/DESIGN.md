@@ -1,7 +1,7 @@
 # ArteagaMed — marketing site design system
 
-The public site lives in this Next.js app (`src/app/page.tsx` and friends). This file
-records the decisions behind it so new pages stay consistent.
+The public site is a static Next.js export (pages in `src/components/pages/`, routes in
+`src/app/`). This file records the decisions behind it so new pages stay consistent.
 
 ## 1. Design direction
 
@@ -70,7 +70,7 @@ The order answers the visitor's questions one after another:
 9. **Trust:** team, registration, data and terms
 10. **Where we work:** coastline map with a text list of towns
 11. **FAQ:** includes the 112 distinction
-12. **Contact:** phone, form and the emergency note
+12. **Contact:** phone (and email once published) and the emergency note
 13. **Final CTA**
 
 ## 6. Responsive behaviour
@@ -83,9 +83,9 @@ scrolling at 320px.
 ## 7. Conversion strategy
 
 - Primary goal **visitor → member**: "Explore membership" in the hero, nav and final CTA; plan cards
-  link to `/register?plan=<id>`.
+  lead to the contact section, where joining is a phone call.
 - Secondary goal **visitor → contact**: the phone number is always one tap away (header on
-  desktop, sticky bar on mobile) and the contact form is a calm alternative.
+  desktop, sticky bar on mobile).
 - Each section ends with at most one CTA. The wording is consistent ("Explore membership", "Talk to
   ArteagaMed") and never aggressive.
 
